@@ -6,7 +6,7 @@
 
 /* Style pour ensemble de body */
 body {
-    background-image: url(/media/fond.jpeg);
+    background-image: url(media/fond.jpeg);
     background-position: center;
     background-size: cover;
     font-family: sans-serif;
@@ -49,27 +49,35 @@ header {
 /* Fin Style Etête de pâge  */
 
 /* STYLE POUR LA FORMULAIRE  */
-.form-title {
-    padding: 15px;
+.contour{
     position: relative;
+    
+}
+.form-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 15px;
     width: 800px;
     top: 50%;
     left: 20%;
     transform: translate(-59% -50%);
     text-align: center;
-    color: orangered;
+    
     border-radius: 15px 15px 0 0;
     background-color: rgb(0, 0, 0, 0, 5);
     box-shadow: 3px -8;
     font-size: xx-large;
     box-sizing: border-box;
     box-shadow: 0 15px 25px;
+    padding-left: 100px;
 
 
 }
 
 .form-title p {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(235, 29, 29);
     border-radius: 15px 15px 0 0;
 }
 
@@ -98,6 +106,17 @@ header {
     pointer-events: none;
     transition: .5s;
 }
+.nav_barre ul {
+    list-style: none;
+}
+
+.nav_barre ul li {
+    position: relative;
+    display: inline;
+    margin: 20px;
+    font-size: x-large;
+}
+
 
 /* .form
 {
@@ -122,17 +141,6 @@ header {
     right: 20px;
     padding: 50px;
 } */
-
-.nav_barre ul {
-    list-style: none;
-}
-
-.nav_barre ul li {
-    position: relative;
-    display: inline;
-    margin: 20px;
-    font-size: x-large;
-}
 
 
 

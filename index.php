@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link rel="stylesheet" href="css/style.index.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -19,8 +19,13 @@
             </div>
             <div class="nav_barre">
                 <ul>
-                    <li> <a href="addapp.php">Accueil</a></li>
-                    <li><a href="">Formation</a></li>
+                    <li> <a href="addapp.php">Ajputer un Apprenant</a></li>
+                    <li><a href="">Apprenants</a>
+                        <ul>
+                            <li><a href="addapp.php"></a></li>
+                            <li><a href="listeapprenant.php"></a></li>
+                        </ul>
+                    </li>
                     <li><a href="listeapprenant.php">Se Connecter</a></li>
                 </ul>
             </div>

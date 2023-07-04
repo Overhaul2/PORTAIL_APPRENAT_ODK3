@@ -11,8 +11,8 @@ if (isset($_POST['ajouter'])) {
     $photo = $_POST['photo'];
     $promotion = $_POST['promotion'];
     $certfication = $_POST['certfication'];
-    if (!empty($nom) && !empty($prenom) && !empty($age) && !empty($dateNaissance) && !empty($email) && !empty($tel) && !empty($photo) && !empty($promotion) && !empty($certfication)) {
-        $requete = $bddPDO->prepare("INSERT INTO `apprenant`(`nom`, `prenom`, `age`, `dateDeNaissance`, `email`, `tel`, `photo`, `promotion`, `anneeCertification`) VALUES (:nom,:prenom,:age,:dateNaissance,:email,:tel,:photo,:promotion,:certfication)");
+    if (!empty($nom) && !empty($prenom) && !empty($age) && !empty($dateNaissance) && !empty($email) && !empty($tel) && !empty($promotion) && !empty($certfication)) {
+        $requete = $bddPDO->prepare("INSERT INTO `apprenant`(`nom`, `prenom`, `age`, `dateNaissance`, `email`, `tel`, `photo`, `promotion`, `anneeCertification`) VALUES (:nom,:prenom,:age,:dateNaissance,:email,:tel,:photo,:promotion,:certfication)");
 
         $result = $requete->bindValue(':nom', $nom);
         $result = $requete->bindValue(':prenom', $prenom);
@@ -20,7 +20,7 @@ if (isset($_POST['ajouter'])) {
         $result = $requete->bindValue(':dateNaissance', $dateNaissance);
         $result = $requete->bindValue(':email', $email);
         $result = $requete->bindValue(':tel', $tel);
-        $result = $requete->bindValue(':photo', $photo); 
+        $result = $requete->bindValue(':photo', $photo);
         $result = $requete->bindValue(':promotion', $promotion);
         $result = $requete->bindValue(':certfication', $certfication);
 
@@ -35,4 +35,6 @@ if (isset($_POST['ajouter'])) {
     } else {
         echo "Veuillez remplire tout les champ";
     }
+    header('location:../listeapprenant.php');
+        exit();
 }

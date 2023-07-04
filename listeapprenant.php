@@ -52,22 +52,46 @@
             <th>Photo</th>
             <th>Promotion</th>
             <th>Année Certification</th>
+            <th>Modification</th>
+            
         </tr>
         <?php
-        while ($ligne = $result->fetch(PDO::FETCH_NUM)) {
-            echo "<tr>";
-            foreach ($ligne as $valeur) {
-                echo "<td>$valeur</td>";
-            }
-            echo "</tr>";
-        }
-        ?>
+        // while ($ligne = $result->fetch(PDO::FETCH_NUM)) {
+        //     echo "<tr>";
+        //     foreach ($ligne as $valeur) {
+        //         echo "<td>$valeur</td>";
+        //     }
+        //     echo "</tr>";
+            foreach($result as $app) :?>
+            <tr>
+                <td><?= $app['matricule']?></td>
+                <td><?= $app['nom']?></td>
+                <td><?= $app['prenom']?></td>
+                <td><?= $app['age']?></td>
+                <td><?= $app['dateNaissance']?></td>
+                <td><?= $app['email']?></td>
+                <td><?= $app['tel']?></td>
+                <td><img style="border-radius: 50%;" src="data.image/jpg;charset=utf8;base64 <?php echo base64_encode($app ['photo']);?>"width="80px" height="80px"/></td>
+                <td><?= $app['promotion']?></td>
+                <td><?= $app['anneeCertification']?></td>
+                
+<?php 
+
+echo "<td><a href='database/suppapp.php?matricule=". $app['matricule'] ."' class='wastedbasket'>&#128465; </a></td>";
+?>
+
+            </tr>
+            <?php endforeach; ?>
+
+
+        <!-- } -->
+        
     </table>
     <?php
     $result->closeCursor();
     ?>
 
-    <a href="/index.html">Accueil</a>
+    <br><a href="/index.html">Accueil</a>
 </body>
 
 </html>

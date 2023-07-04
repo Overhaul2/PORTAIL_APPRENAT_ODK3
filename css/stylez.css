@@ -47,7 +47,6 @@ h3
     text-align: center;
     color: orangered;
     font-size: xx-large;
-
 }
 h4
 {
@@ -67,8 +66,6 @@ table
     box-shadow:  6px 6px #cccaca;
     max-width:90%;
     height: auto !important;
-    /* overflow: hidden! important; */
-    display: block;
 
 }
 table th
@@ -96,8 +93,5 @@ table th, td
     cursor: pointer;
     opacity: 1;
     animation: fadein.5s linear forwards;
-
-
-
 }
 /*FIN  STYLE DE LA PAGE LISTE DES APPRENANT  */
