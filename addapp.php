@@ -1,5 +1,3 @@
-<?php
-echo '
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,9 +7,10 @@ echo '
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enregistrement</title>
     <link rel="stylesheet" href="css/form.css">
+    <script src="js/script.js"></script>
 </head>
 
-<body bacground-img="url(/media/fond.jpeg)">
+<body>
     <!-- ENTÊTE DE PAGE  -->
     <div class="container">
         <header>
@@ -22,8 +21,7 @@ echo '
             <div class="nav_barre">
                 <ul>
                     <li> <a href="index.php">Accueil</a></li>
-                    <li><a href="">Formation</a></li>
-                    <li><a href="">Se Connecter</a></li>
+                    <li><a href="listeapprenant.php">Liste</a></li>
                 </ul>
             </div>
         </header>
@@ -32,8 +30,8 @@ echo '
     <!-- FORMULAIRE ENRREGISTREMENT -->
     <div class="form-title">
 
-        <form action="database/connect.php" method="post">
-            <p> Enrregistrer Apprenant</p>
+        <form action="database/connect.php" method="post" enctype="multipart/form-data">
+            <p> Enrregistrer Apprénant</p>
             <div class="names">
 
                 <div class="user-box">
@@ -93,8 +91,13 @@ echo '
         <div class="logo-odk">
             <img src="media/ODK.jpeg" alt="">
         </div>
+        <div class="contactez-nous">
+            <i class="fa fa-apple" id="apple"></i>
+            <i class="fa fa-twitter" id="twitter"></i>
+            <i class="fa fa-facebook" id="facebook"></i>
+            <i class="fa fa-github" id="github"></i>
+        </div>
     </footer>
 </body>
 
-</html>';
-?>
+</html>

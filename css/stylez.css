@@ -32,14 +32,31 @@ header {
 .nav_barre ul {
     list-style: none;
 }
-
+.nav_barre
+{
+    margin: 40px;
+}
 .nav_barre ul li {
     position: relative;
     display: inline;
     margin: 20px;
     font-size: x-large;
 }
-
+.nav_barre ul li a:hover
+{
+    background-color: orange;
+    border: 2px solid orangered;
+}
+h3 a
+{
+    background: white;
+    color: orangered;
+    list-style: none;
+}
+h3 a:hover
+{
+    background-color: aqua;
+}
 /* Fin Style Etête de pâge  */
 
 h3 
@@ -65,8 +82,8 @@ table
     font-style: italic;
     box-shadow:  6px 6px #cccaca;
     max-width:90%;
-    height: auto !important;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 table th
 {
@@ -95,3 +112,20 @@ table th, td
     animation: fadein.5s linear forwards;
 }
 /*FIN  STYLE DE LA PAGE LISTE DES APPRENANT  */
+
+a
+{
+    border: 1px solid orangered;
+    background: rgb(29, 20, 20);
+    color: white;
+    padding: 8px 20px;
+    transform: translateY(2px);
+    border-radius: 5px;
+    font-size: x-large;
+
+}
+a:hover
+{
+    background-color: rgb(59, 59, 212);
+    border: blue;
+}
