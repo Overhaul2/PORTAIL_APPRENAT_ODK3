@@ -82,8 +82,8 @@ table
     font-style: italic;
     box-shadow:  6px 6px #cccaca;
     max-width:90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: center;
+    margin-right: center;
 }
 table th
 {
@@ -129,3 +129,59 @@ a:hover
     background-color: rgb(59, 59, 212);
     border: blue;
 }
+
+
+/* PIED DE PAGE */
+footer {
+    padding: 20px;
+    margin-top: 100px;
+    background-color: black;
+    color: orangered;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.logo-odk img {
+    width: 125px;
+}
+
+/* STYLE POUR LES RESEAU SOCIAUX  */
+.contactez-nous #apple,
+#twitter,
+#facebook,
+#github {
+    font-size: 3em;
+    background-color: #00000080;
+    color: #fff;
+    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080, 2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080 inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080;
+    border-radius: 11px 19px;
+    margin: 0 40px;
+    animation: animate 3s linear infinite;
+    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff, 0 0 200px #0072ff;
+}
+
+/* APPORTER DE L'ANIMATION  */
+#twitter {
+    animation-delay: 0.3s;
+}
+
+#facebook {
+    animation-delay: 0.7s;
+}
+
+#github {
+    animation-delay: 0.1s;
+}
+#apple {
+    animation-delay: 1ms;
+}
+
+@keyframes animate {
+    from {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* FIN STYLE OUR LES RESAUX SOCIAUX  */

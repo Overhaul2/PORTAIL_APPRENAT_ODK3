@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Enregistrement</title>
     <link rel="stylesheet" href="css/form.css">
     <script src="js/script.js"></script>
@@ -35,46 +36,35 @@
             <div class="names">
 
                 <div class="user-box">
-                    <input type="text" name="nom" id="name" placeholder="Nom">
+                    <span>Nom :</span><input type="text" name="nom" id="name" placeholder="Nom">
                 </div>
                 <div class="user-box">
-                    <!-- <label for="prenom">Prénom</label> -->
-                    <input type="text" name="prenom" id="prenom" placeholder="Prenom">
-
+                <span>Prénom :</span><input type="text" name="prenom" id="prenom" placeholder="Prenom">
                 </div>
-
                 <div class="user-box">
-                    <!-- <label for="age">Âge</label> -->
-                    <input type="number" name="age" id="age" placeholder="Age">
+                <span>Âge :</span><input type="number" name="age" id="age" placeholder="Age">
                 </div>
-
                 <div class="user-boxd">
-                    <!-- <label for="dateDeNaissance">Date de Naissance</label> -->
-                    <input type="date" name="dateNaissance" id="dateDeNaissance" placeholder="Date de Naissance">
+                <span>Date de Naissance :</span><input type="date" name="dateNaissance" id="dateDeNaissance" placeholder="Date de Naissance">
                 </div>
 
                 <div class="user-box">
-                    <!-- <label for="email">E_mail</label> -->
-                    <input type="email" name="email" id="email" placeholder="E_mail">
+                <span>E-mail</span><input type="email" name="email" id="email" placeholder="E_mail">
                 </div>
 
                 <div class="user-box">
-                    <!-- <label for="telephone">Tel</label> -->
-                    <input type="number" name="tel" id="telephone" placeholder="Tel">
+                <span>Tel :</span><input type="number" name="tel" id="telephone" placeholder="Tel">
                 </div>
 
 
                 <div class="user-box">
-                    <!-- <label for="promotion">promo</label> -->
-                    <input type="text" name="promotion" id="promotion" placeholder="Promotion">
+                <span>Promotion :</span><input type="text" name="promotion" id="promotion" placeholder="Promotion">
                 </div>
                 <div class="user-box">
-                    <!-- <label for="date certfication">Année</label> -->
-                    <input type="number" name="certfication" id="certfication" placeholder="2023"> <br>
+                <span>Année Certification :</span><input type="number" name="certification" id="certification" placeholder="2023"> <br>
                 </div>
 
                 <div class="user-box">
-                    <!-- <label for="photo">Photo</label> -->
                     <input type="file" name="photo" id="photo">
                 </div>
 

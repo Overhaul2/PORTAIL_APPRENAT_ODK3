@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Liste des Apprenants</title>
     <link rel="stylesheet" href="css/stylez.css">
 </head>
@@ -78,8 +79,8 @@
                     <td><?= $app['anneeCertification'] ?></td>
 
                     <?php
-                    
-                        echo "<td><a href='database/suppapp.php?matricule=" . $app['matricule'] . "' class='Supp' >&#x1F5D1; </a></td>";
+
+                    echo "<td><a href='database/suppapp.php?matricule=" . $app['matricule'] . "' class='Supp' >&#x1F5D1; </a> <a href='database/detail.php?matricule=" . $app['matricule'] . "' class='detail'>	&#x1F441;</a> <a href=database/edit.php?matricule=" .$app['matricule'] ." 'class='edit'>&#x1F589;</a></td>";
                     ?>
 
                 </tr>
@@ -93,8 +94,41 @@
     <?php
     $result->closeCursor();
     ?>
+    <!-- //pagination  -->
+    <!-- <?php
+            $req = $bddPDO->query('SELECT matricule FROM apprenant');
+            $nombre_Total_Apprenants_page = 10;
 
+            $nbre_pages = ceil($nombre_Total_Apprenants_page / $nbre_pages);
+            if (isset($_GET['page']) && is_numeric($_GET['page'])) {
+                $page_num = $_GET['page'];
+            } else {
+                $page_num = 1;
+            }
+
+            if ($page_num < 1) {
+                $page_num = 1;
+            } else if ($page_num > $last_page) {
+                $page_num = $last_page;
+            }
+            //Calcul du début et de la fin des résultats à afficher sur cette page
+            $limit = 'LIMIT' . ($page_num - 1) * $nombre_Total_Apprenants_page . ',' . $nombre_Total_Apprenants_page;
+            //requette a utiliser
+            $sql = 'SELECT matricule, nom, prenom, age, dateNaissance, email, tel, photo, promotion; anneeCertification'
+            ?>   -->
+    <!-- Fin pagination  -->
     <br><a href="index.php">Accueil</a>
+    <footer>
+        <div class="logo-odk">
+            <img src="media/ODK.jpeg" alt="">
+        </div>
+        <div class="contactez-nous">
+            <a href="https://www.apple.com/" target="_blank"> <i class="fa fa-apple" id="apple"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" id="twitter"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" id="facebook"></i></a>
+            <a href="https://github.com/" target="_blank"><i class="fa fa-github" id="github"></i></a>
+        </div>
+    </footer>
 </body>
 
 </html>
