@@ -1,9 +1,8 @@
 /* Style pour l'entête de la page   */
-/* body
-{
-    background-image: url('../media/fond.jpeg');
-    background-size: cover;
-} */
+body {
+    background: #769ac7;
+}
+
 /* Style pour l'entête de la page   */
 .contenair {
     background-color: black;
@@ -160,98 +159,111 @@ form .user-input input[type=submit]:hover {
 /* FIN STYLE FORMULAIRE  */
 
 /* STYLE PAGE DETAILS DE L'APPRENANT  */
-section
-{
-    position: relative;
+section {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
-    /* border: 2px solid black; */
-    border-radius: 10px;
-    max-width: 66%;
-    height: 420px;
-    background-color: rgba(0, 0, 0,  0.4);
+    justify-content: center;
+    height: 100vh;
+
+}
+
+section .detail {
+    /* position: relative; */
+    background: rgba(255, 255, 255, .15);
     padding: 10px;
-    left: 100px;
+    /* display: flex; */
+    align-items: center;
+    /* flex-direction: column; */
+    width: 600px;
+    height: 450px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, .37);
+    border: 1px solid rgba(255, 255, 255, .18);
 }
-.detail
-{
-    display: flex;
-}
-.detail-input
-{
-    flex: 1;
+
+.detail-input {
+    display: inline-block;
+    margin: 10px;
     padding: 0 150px 10px 30px;
 }
-.detail-input .info
-{
-    font-size: 20px;
-    color: #ffffff;;
+
+.detail-input .input-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
-.detail-input span
-{
+
+.image-profile {
+    display: inline-block;
+}
+
+.detail-input .info {
+    font-size: 20px;
+    color: #920d0d;
+    ;
+}
+
+.detail-input span {
     color: black;
 }
-section p 
-{
+
+section p {
     font-size: xx-large;
     margin: auto;
     background: black;
     color: orangered;
     text-align: center;
     border-radius: 5px;
-    width: 100%;
-    padding: 15px;
-}
-.image-profile
-{
-    flex: 1;
-    margin: 60px 20p5x
+    padding: 10px;
 }
 
-.image-profile img
-{
+
+.image-profile img {
     width: 35vw;
     animation: Bounce 4s ease forwards infinite;
     width: 150px;
     border-radius: 20px;
 }
-    @keyframes Bounce
-    {
-        0%{
-            transform: translateY(-15px);
-        }
-        50%{
-            transform: translateY(0px); 
-        }
-        100%{
-            transform: translateY(-15px) ;
-        }
+
+@keyframes Bounce {
+    0% {
+        transform: translateY(-15px);
     }
-    .shadow 
-    {
-        background: black;
-        height: 15px;
-        filter: blur(5px);
-        box-shadow:-10px 30px 18px 1px rgba(0, 0, 0, 1);
-        width: 17vw;
-        animation: BounceIn ease 4s forwards infinite;
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.shadow {
+    background: black;
+    height: 15px;
+    filter: blur(5px);
+    box-shadow: -10px 30px 18px 1px rgba(0, 0, 0, 1);
+    width: 17vw;
+    animation: BounceIn ease 4s forwards infinite;
+
+}
+
+@keyframes BounceIn {
+    0% {
+        transform: translateY(-24px) scale(.5);
+    }
+
+    50% {
+        transform: translateY(0px) scale(.7);
 
     }
-    @keyframes BounceIn 
-    {
-        0%{
-            transform: translateY(-24px) scale(.5);
-        }
-        50% {
-            transform: translateY(0px) scale(.7);
 
-        }
-        100%{
-            transform: translate(-24px) scale(.5);
-        }
+    100% {
+        transform: translate(-24px) scale(.5);
     }
+}
 
 /* PIED DE PAGE */
 footer {
@@ -296,6 +308,7 @@ footer {
 #github {
     animation-delay: 0.1s;
 }
+
 #apple {
     animation-delay: 1ms;
 }

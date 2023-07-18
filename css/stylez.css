@@ -76,15 +76,7 @@ h4
     font-size: x-large;
   
 }
-table
-{
-    background-color: aqua;
-    font-style: italic;
-    box-shadow:  6px 6px #cccaca;
-    max-width:90%;
-    margin-left: center;
-    margin-right: center;
-}
+
 table th
 {
     background-color: rgb(248, 174, 125);
@@ -95,25 +87,14 @@ table td
 }
 table th, td
 {
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     border: 2px solid orangered;
     border-radius: 5px;
-    vertical-align: middle;
-    word-wrap: break-word;
-    white-space: normal;
-    min-height: 50px;
-    line-break: strict;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    transition:.3s ease all;
     cursor: pointer;
-    opacity: 1;
-    animation: fadein.5s linear forwards;
 }
 /*FIN  STYLE DE LA PAGE LISTE DES APPRENANT  */
 
-a
+.lien a
 {
     border: 1px solid orangered;
     background: rgb(29, 20, 20);

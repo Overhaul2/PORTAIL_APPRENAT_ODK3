@@ -1,6 +1,5 @@
 <?php
-$bddPDO = new PDO('mysql:host=localhost;dbname=portaildb', 'root', "");
-$bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require_once 'connection.php';
 if (isset($_POST['ajouter'])) {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
@@ -16,7 +15,7 @@ if (isset($_POST['ajouter'])) {
     
     if (!empty($nom) && !empty($prenom) && !empty($age) && !empty($dateNaissance) && !empty($email) && !empty($tel) && !empty($promotion) && !empty($certfication)) {
         move_uploaded_file($photo['tmp_name'],'../user_image/'.$photo['name']);
-        $requete = $bddPDO->prepare("INSERT INTO `apprenant`(`nom`, `prenom`, `age`, `dateNaissance`, `email`, `tel`, `photo`, `promotion`, `anneeCertification`) VALUES (:nom,:prenom,:age,:dateNaissance,:email,:tel,:photo,:promotion,:certification)");
+        $requete = $bddPDO->prepare("INSERT INTO `apprenants`(`nom`, `prenom`, `age`, `dateNaissance`, `email`, `tel`, `photo`, `promotion`, `anneeCertification`) VALUES (:nom,:prenom,:age,:dateNaissance,:email,:tel,:photo,:promotion,:certification)");
 
         $result = $requete->bindValue(':nom', $nom);
         $result = $requete->bindValue(':prenom', $prenom);
@@ -27,7 +26,6 @@ if (isset($_POST['ajouter'])) {
         $result = $requete->bindValue(':photo', $photo['name']);
         $result = $requete->bindValue(':promotion', $promotion);
         $result = $requete->bindValue(':certification', $certfication);
-
         $result = $requete->execute();
 
         if (!$result) {

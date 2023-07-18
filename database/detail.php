@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-$bddPDO = new PDO('mysql:host=localhost;dbname=portaildb', 'root', "");
-$bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require_once 'connection.php';
 $matricule = $_REQUEST["matricule"];
-$ptsmt = $bddPDO->prepare("SELECT * FROM apprenant WHERE matricule = $matricule ");
+$ptsmt = $bddPDO->prepare("SELECT * FROM apprenants WHERE matricule = $matricule ");
 $ptsmt->execute();
 $apprenant = $ptsmt->fetchAll();
 
@@ -25,7 +24,7 @@ $apprenant = $ptsmt->fetchAll();
     <div class="container">
         <header>
             <div class="logo">
-                <img src="media/ODK.jpeg" alt="Odk logo">
+                <img src="../media/ODK.jpeg" alt="Odk logo">
                 <p>Orange <br> Digital Kalanso</p>
             </div>
             <div class="nav_barre">
@@ -39,8 +38,9 @@ $apprenant = $ptsmt->fetchAll();
     <!-- FIN ENTÊTE DE PAGE  -->
     <!-- FORMULAIRE ENRREGISTREMENT -->
     <section>
-    <p> Information Sur Apprénant</p>
         <div class="detail">
+            <p> Information Sur Apprénant</p>
+            <!-- <div class="detail_box"> -->
             <div class="detail-input">
                 <?php foreach ($apprenant as $app) : ?>
 
@@ -52,12 +52,14 @@ $apprenant = $ptsmt->fetchAll();
                     <h3 class="info"><span>Téléphone:</span><?= $app['tel'] ?></h3>
                     <h3 class="info"><span>Promotion :</span><?= $app['promotion'] ?></h3>
                     <h3 class="info"><span>Année Certification :</span><?= $app['anneeCertification'] ?></h3>
-                <?php endforeach; ?>
             </div>
             <div class="image-profile">
-                <img src="user_image/IMG_1202.jpeg" alt="photo-profile">
-                <div class="shadow"></div>
+                <img width="80px" height="80px" style="border-radius: 5px;" src="../user_image/<?= $app['photo'] ?>" />
+                <!-- <div class="shadow"></div> -->
+            <?php endforeach; ?>
             </div>
+
+            <!-- </div> -->
         </div>
     </section>
 

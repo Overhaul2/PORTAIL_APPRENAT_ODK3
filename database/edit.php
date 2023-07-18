@@ -1,19 +1,12 @@
 <?php
-$bddPDO = new PDO('mysql:host=localhost;dbname=portaildb', 'root', "");
-$bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+require_once 'connection.php';
 $matricule = $_REQUEST["matricule"];
-$prepareStatement = $bddPDO->prepare("SELECT * FROM apprenant WHERE matricule=$matricule ");
+$prepareStatement = $bddPDO->prepare("SELECT * FROM apprenants WHERE matricule=$matricule ");
 $reponseIsOK = $prepareStatement->execute();
 $apprenant = $prepareStatement->fetchAll();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
-
-
-
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +23,7 @@ $apprenant = $prepareStatement->fetchAll();
     <div class="container">
         <header>
             <div class="logo">
-                <img src="media/ODK.jpeg" alt="Odk logo">
+                <img src="../media/ODK.jpeg" alt="Odk logo">
                 <p>Orange <br> Digital Kalanso</p>
             </div>
             <div class="nav_barre">
@@ -44,23 +37,45 @@ $apprenant = $prepareStatement->fetchAll();
     <!-- FIN ENTÊTE DE PAGE  -->
     <!-- FORMULAIRE ENRREGISTREMENT -->
     <section>
-        <p> Information Sur Apprénant</p>
-        <div class="detail">
-            <div class="detail-input">
-                <form action="update.php" method="post">
-                    <?php foreach ($apprenant as $app) : ?>
-                        Nom :<input type="text" name="nom" value="<?= $app['nom'] ?>"> <br>
-                        Prenom :<input type="text" name="prenom" value="<?= $app['prenom'] ?>"> <br>
-                        Âge :<input type="number" name="age" value="<?= $app['age'] ?>"> <br>
-                        Date de Naissance :<input type="date" name="dateNaissance" value="<?= $app['dateNaissance'] ?>"> <br>
-                        E-mail :<input type="text" name="email" value="<?= $app['email'] ?>"> <br>
-                        Téléphone: <input type="number" name="tel" value="<?= $app['tel'] ?>"> <br>
-                        Promotion : <input type="text" name="promotion" value="<?= $app['promotion'] ?>"> <br>
-                        Année Certification : <input type="number" name="certification" value="<?= $app['anneeCertification'] ?>">
-                        Photo : <input type="file" name="photo" value="<?='../user_image/'.$app['photo']['name'] ?>">
-                    <?php endforeach; ?>
-                    <input type="submit" value="Modifier" name="modifier">
 
+        <div class="detail">
+            <p> Information Sur Apprénant</p>
+            <div class="detail-input">
+                <form action="update.php" enctype="multipart/form-data" method="post">
+                    <?php foreach ($apprenant as $app) : ?>
+                        Matricule : <input type="number" name="matricule" id="matricule" value="<?= $app['matricule'] ?>">
+                        <div class="input-edit">
+                            Nom :<input type="text" name="nom" value="<?= $app['nom'] ?>"> <br>
+                        </div>
+                        <div class="input-edit">
+                            Prenom :<input type="text" name="prenom" value="<?= $app['prenom'] ?>"> <br>
+
+                        </div>
+                        <div class="input-edit">
+                            Âge :<input type="number" name="age" value="<?= $app['age'] ?>">
+                        </div>
+                        <div class="input-edit">
+                            Date de Naissance :<input type="date" name="dateNaissance" value="<?= $app['dateNaissance'] ?>">
+                        </div>
+                        <div class="input-edit">
+                            E-mail :<input type="text" name="email" value="<?= $app['email'] ?>">
+                        </div>
+                        <div class="input-edit">
+                            Téléphone: <input type="number" name="tel" value="<?= $app['tel'] ?>">
+                        </div>
+                        <div class="input-edit">
+                            Promotion : <input type="text" name="promotion" value="<?= $app['promotion'] ?>">
+                        </div>
+                        <div class="input-edit">
+                            Année Certification : <input type="number" name="certification" value="<?= $app['anneeCertification'] ?>">
+                        </div>
+                        <div class="input-edit">
+                            <input type="file" name="photo" value=" <?= '../user_image/' . $app['photo']['name'] ?>">
+                        </div>
+                    <?php endforeach; ?>
+                    <div class="input-edit">
+                        <input type="submit" value="Modifier" name="modifier">
+                    </div>
                 </form>
             </div>
         </div>

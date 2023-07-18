@@ -1,8 +1,7 @@
 <?php
-$bddPDO = new PDO('mysql:host=localhost;dbname=portaildb', 'root', "");
-$bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require_once 'connection.php';
 if(isset($_POST['modifier'])){
-    // $matricule=$_GET['matricule'];
+    $matricule = $_GET['matricule'];
     $nom= $_POST['nom'];
     $prenom= $_POST['prenom'];
     $age= $_POST['age'];
@@ -14,7 +13,7 @@ if(isset($_POST['modifier'])){
     $certfication= $_POST['certification'];
     if(!empty($nom) && !empty($prenom) && !empty($age) && !empty($dateNaissance) && !empty($email) && !empty($tel) && ! empty($promotion) && !empty($certification)){
         move_uploaded_file($photo['tmp_name'],'../user_image/'.$photo['name']);
-        $requette= $bddPDO->prepare("UPDATE apprenant SET email=:email, nom=:nom, prenom=:prenom, age=:age, dateNaissance=:dateNaissance, email=:email, tel=:tel, promotion=:promotion,photo=:photo, certification=:certification WHERE apprenant.email=$email");
+        $requette= $bddPDO->prepare("UPDATE apprenants SET email=:email, nom=:nom, prenom=:prenom, age=:age, dateNaissance=:dateNaissance, email=:email, tel=:tel, promotion=:promotion,photo=:photo, certification=:certification WHERE matricule=$matricule");
         
         $result= $requette->bindValue(':nom', $nom);
         $result= $requette->bindValue(':prenom',$prenom);
@@ -33,9 +32,10 @@ if(isset($_POST['modifier'])){
         }else{
             echo " <script type=\"text/javascript\"> alert ('Modification reçue avec succès')</script>";
             header('location:../listeapprenant.php');
+            
         }
-    }
-    else {echo "Veuillez remplir tout les Champ";
+    }else {echo "Veuillez remplir tout les Champ";
+
         }
     }
 ?>

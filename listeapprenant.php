@@ -29,9 +29,8 @@
     </div>
     <!-- Connexion à la base de données -->
     <?php
-    $bddPDO = new PDO('mysql:host=localhost;dbname=portaildb', 'root', "");
-    $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $requete = "SELECT * FROM `apprenant`  ORDER BY nom ASC";
+require_once 'database/connection.php';
+$requete = "SELECT * FROM `apprenants`  ORDER BY nom ASC";
     $result = $bddPDO->query($requete);
     if (!$result) {
         echo "Une erreur s'est produite !";
@@ -96,7 +95,7 @@
     ?>
     <!-- //pagination  -->
     <!-- <?php
-            $req = $bddPDO->query('SELECT matricule FROM apprenant');
+            $req = $bddPDO->query('SELECT matricule FROM apprenants');
             $nombre_Total_Apprenants_page = 10;
 
             $nbre_pages = ceil($nombre_Total_Apprenants_page / $nbre_pages);
@@ -117,7 +116,7 @@
             $sql = 'SELECT matricule, nom, prenom, age, dateNaissance, email, tel, photo, promotion; anneeCertification'
             ?>   -->
     <!-- Fin pagination  -->
-    <br><a href="index.php">Accueil</a>
+  <div class="lien"> <a href="index.php">Accueil</a></div>
     <footer>
         <div class="logo-odk">
             <img src="media/ODK.jpeg" alt="">
